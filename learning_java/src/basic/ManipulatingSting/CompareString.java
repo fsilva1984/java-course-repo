@@ -1,5 +1,7 @@
 package basic.ManipulatingSting;
 
+import java.util.Scanner;
+
 public class CompareString {
 
 	public static void main(String[] args) {
@@ -25,6 +27,18 @@ public class CompareString {
 
 		// Comparando os valores das strings e nao as referencias
 		System.out.println(str1.equals(str2));
+
+		String s1 = "My String";
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.printf("Frase: ");
+		String resp = sc.nextLine().trim();
+
+		System.out.println(resp.equalsIgnoreCase(s1));
+		System.out.println(s1 == resp);
+
+		sc.close();
 	}
 
 }
