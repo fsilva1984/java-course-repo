@@ -14,7 +14,7 @@ public class Operators {
 		System.out.println("i++, Incremento pós­fixado");
 		System.out.println("i--, Decremento pós­fixado");
 
-		System.out.println("!, Negação lógica");
+		System.out.println("! NOT, Negação lógica");
 
 		// Operadores Binario
 
@@ -40,8 +40,8 @@ public class Operators {
 		System.out.println(">= Maior que ou igual");
 		System.out.println("== Igualdade");
 		System.out.println("!= Desigualdade");
-		System.out.println("&& E lógico");
-		System.out.println("|| UO lógico");
+		System.out.println("&& AND lógico");
+		System.out.println("|| OR lógico");
 
 		// Operador ternario
 		System.out.println("\n Operador Ternario");
