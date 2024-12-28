@@ -1,58 +1,46 @@
-O `TreeMap` é uma classe do Java que faz parte do pacote `java.util`. Ele é uma implementação da interface `NavigableMap`, que por sua vez estende a interface `SortedMap`. O `TreeMap` armazena pares de chave-valor em uma árvore binária de busca, garantindo que as chaves sejam ordenadas de forma natural (ou de acordo com um comparador especificado).
+<br>
 
-Aqui estão algumas características e pontos importantes sobre o `TreeMap`:
+O `Map` é uma interface em Java que faz parte do framework de coleções (`java.util`). Ele representa uma coleção de pares chave-valor, onde cada chave é única e mapeia para um valor específico. A interface `Map` não estende a interface `Collection`, mas é uma parte integral do framework de coleções de Java.
 
-1. **Ordenação**: As chaves no `TreeMap` são automaticamente ordenadas. Se você não especificar um comparador, as chaves serão ordenadas de acordo com sua ordem natural (ou seja, de acordo com a implementação do método `compareTo` da interface `Comparable`).
+Aqui estão alguns pontos-chave sobre a interface `Map`:
 
-2. **Elementos Únicos**: Como qualquer implementação de `Map`, o `TreeMap` não permite chaves duplicadas. No entanto, os valores podem ser duplicados.
+1. **Pares Chave-Valor**: Cada elemento em um `Map` é um par chave-valor. As chaves são únicas, enquanto os valores podem ser duplicados.
 
-3. **Desempenho**: As operações de inserção, remoção e busca no `TreeMap` têm um tempo de execução de O(log n), onde n é o número de elementos no mapa. Isso o torna eficiente para operações de busca e ordenação.
+2. **Métodos Principais**:
+   - `put(K key, V value)`: Insere um par chave-valor no mapa. Se a chave já existir, o valor antigo será substituído pelo novo valor.
+   - `get(Object key)`: Retorna o valor ao qual a chave especificada está mapeada, ou `null` se o mapa não contém a chave.
+   - `remove(Object key)`: Remove o par chave-valor para a chave especificada do mapa, se estiver presente.
+   - `containsKey(Object key)`: Retorna `true` se o mapa contém uma chave especificada.
+   - `containsValue(Object value)`: Retorna `true` se o mapa mapeia uma ou mais chaves para o valor especificado.
+   - `size()`: Retorna o número de pares chave-valor no mapa.
+   - `isEmpty()`: Retorna `true` se o mapa não contém pares chave-valor.
 
-4. **Navegação**: O `TreeMap` fornece métodos adicionais para navegação, como `firstKey()`, `lastKey()`, `lowerKey()`, `higherKey()`, `floorKey()`, e `ceilingKey()`, que permitem acessar chaves específicas com base em sua ordem.
+3. **Implementações Comuns**:
+   - `HashMap`: Uma implementação baseada em tabela de hash que permite uma chave `null` e múltiplos valores `null`. Não garante nenhuma ordem específica dos elementos.
+   - `TreeMap`: Uma implementação baseada em árvore vermelho-preto que mantém as chaves em ordem crescente natural ou conforme um comparador especificado. Não permite chaves `null`.
+   - `LinkedHashMap`: Uma implementação que mantém a ordem de inserção dos elementos. Permite uma chave `null` e múltiplos valores `null`.
+   - `Hashtable`: Uma implementação sincronizada e legada que é semelhante ao `HashMap`, mas não permite chaves ou valores `null`.
 
-5. **Thread Safety**: O `TreeMap` não é thread-safe. Se você precisar de um `TreeMap` que seja seguro para uso em ambientes multithreaded, você pode usar `Collections.synchronizedSortedMap(new TreeMap<>())`.
+4. **Iteração**:
+   - Você pode iterar sobre as chaves, valores ou entradas (pares chave-valor) de um `Map` usando os métodos `keySet()`, `values()` e `entrySet()`, respectivamente.
+   - Exemplo de iteração sobre entradas:
+     ```java
+     Map<String, Integer> map = new HashMap<>();
+     map.put("um", 1);
+     map.put("dois", 2);
 
-Aqui está um exemplo básico de como usar o `TreeMap`:
+     for (Map.Entry<String, Integer> entry : map.entrySet()) {
+         System.out.println("Chave: " + entry.getKey() + ", Valor: " + entry.getValue());
+     }
+    ```
 
-```java
-import java.util.TreeMap;
+5. **Uso Comum**:
+   - `Map` é frequentemente usado para armazenar dados que precisam ser acessados rapidamente com base em uma chave única, como em caches, dicionários, etc.
 
-public class TreeMapExample {
-    public static void main(String[] args) {
-        // Cria um TreeMap de inteiros para strings
-        TreeMap<Integer, String> treeMap = new TreeMap<>();
+Aqui está um exemplo simples de uso de `HashMap`:
 
-        // Adiciona elementos ao TreeMap
-        treeMap.put(3, "Três");
-        treeMap.put(1, "Um");
-        treeMap.put(2, "Dois");
-        treeMap.put(5, "Cinco");
-        treeMap.put(4, "Quatro");
-
-        // Exibe os elementos do TreeMap
-        System.out.println("Elementos do TreeMap: " + treeMap);
-
-        // Acessa a primeira e a última chave
-        System.out.println("Primeira chave: " + treeMap.firstKey());
-        System.out.println("Última chave: " + treeMap.lastKey());
-
-        // Remove um elemento
-        treeMap.remove(3);
-        System.out.println("Elementos após remoção: " + treeMap);
-    }
-}
-```
-
-Neste exemplo, o `TreeMap` armazena pares de chave-valor onde as chaves são inteiros e os valores são strings. As chaves são automaticamente ordenadas. A saída será:
-
-```
-Elementos do TreeMap: {1=Um, 2=Dois, 3=Três, 4=Quatro, 5=Cinco}
-Primeira chave: 1
-Última chave: 5
-Elementos após remoção: {1=Um, 2=Dois, 4=Quatro, 5=Cinco}
-```
-
-O `TreeMap` é uma estrutura de dados poderosa e eficiente para situações em que você precisa de uma coleção ordenada de pares de chave-valor.
+Este exemplo demonstra como adicionar, acessar, remover e iterar sobre os elementos de um `Map` em Java.
+<br/>
 
 ```
 ```

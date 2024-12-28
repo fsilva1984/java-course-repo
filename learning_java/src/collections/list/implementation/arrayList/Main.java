@@ -20,19 +20,30 @@ public class Main {
 		User u4 = new User("Paulo");
 		User u5 = new User("João");
 		List<User> users = new ArrayList<>();
-		
+
 		users.add(u1);
 		users.add(u2);
 		users.add(u3);
 		users.add(u4);
 		users.add(u5);
 		users.add(u1);// aceita objetos duplicados
-		
+
+		System.out.println(users.get(2)); // acessando elemento por indice.
 		int i = 0;
-		for(User u : users) {
-			System.out.println( i + " - ".concat(u.getName()));
+		for (User u : users) {
+			System.out.println(i + " - ".concat(u.getName()));
 			i++;
 		}
+
+		Object obj = u4;
+
+		System.out.println("\nObjeto removido: " + users.remove(2));// removendo elemento por indice.
+		System.out.println("\nObjeto " + obj + " foi  removido: " + users.remove(obj));// removendo
+																																									// elemento por
+																																									// nome do objeto.
+
+		System.out.println("\n" + users);
+
 	}
 
 }
