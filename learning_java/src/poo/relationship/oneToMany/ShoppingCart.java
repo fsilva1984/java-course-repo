@@ -1,4 +1,4 @@
-package poo.oneToMany;
+package poo.relationship.oneToMany;
 
 import java.util.ArrayList;
 import java.util.List;

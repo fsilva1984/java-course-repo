@@ -1,4 +1,4 @@
-package poo.oneToOneExample;
+package poo.relationship.oneToOneExample;
 
 public class Motor {
 	private int inject = 1;

@@ -1,4 +1,4 @@
-package poo.oneToOneExample;
+package poo.relationship.oneToOneExample;
 
 public class Car {
 	private int factor = 0;

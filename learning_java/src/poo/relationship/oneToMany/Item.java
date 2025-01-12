@@ -1,4 +1,4 @@
-package poo.oneToMany;
+package poo.relationship.oneToMany;
 
 public class Item {
 	private String name;
